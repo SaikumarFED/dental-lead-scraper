@@ -150,3 +150,6 @@ downloadBtn.addEventListener('click', () => {
 function datestamp() {
   return new Date().toISOString().slice(0, 10);
 }
+
+// Wake Render on page load
+fetch('https://dental-lead-scraper-api.onrender.com').catch(() => {});
