@@ -1,5 +1,5 @@
 /* ── Config ────────────────────────────────────────────────────── */
-const API_URL = 'http://localhost:5000/scrape'; // ← change to your Render URL when deployed
+const API_URL = 'https://dental-lead-scraper-api.onrender.com/scrape'; // ← change to your Render URL when deployed
 
 /* ── DOM refs ──────────────────────────────────────────────────── */
 const urlInput      = document.getElementById('urlInput');
