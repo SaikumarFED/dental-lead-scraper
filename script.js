@@ -67,7 +67,7 @@ scrapeBtn.addEventListener('click', async () => {
     currentLeads = leads;
     renderTable(leads);
   } catch (err) {
-    alert(`Error: ${err.message}\n\nMake sure the Flask backend is running on http://localhost:5000`);
+    alert(`Error: ${err.message}\n\nThe backend may be waking up (free Render plan). Wait 30 seconds and try again.`);
   } finally {
     clearInterval(msgInterval);
     loader.classList.add('hidden');
