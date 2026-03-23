@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Dental Lead Scraper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🦷</span>
+      <span class="logo-text">DentalLeads<em>.ai</em></span>
+    </div>
+    <div class="badge">AI-Powered</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Extract Dental<br><span class="accent">Practice Leads</span><br>Instantly.</h1>
+      <p class="sub">Paste website URLs → get emails, phones, Instagram & an AI-written cold opener. No API keys. No nonsense.</p>
+    </section>
+
+    <section class="card input-card">
+      <div class="card-label">STEP 1 — PASTE URLS</div>
+      <textarea
+        id="urlInput"
+        placeholder="https://brigstonedental.com&#10;https://smileclinicnyc.com&#10;https://downtown-dentistry.com"
+        spellcheck="false"
+      ></textarea>
+      <div class="input-footer">
+        <span class="hint" id="urlCount">0 URLs detected</span>
+        <button id="scrapeBtn" class="btn-primary">
+          <span class="btn-text">Scrape Leads</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Loading -->
+    <div id="loader" class="loader hidden">
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p id="loaderMsg">Initialising scrapers…</p>
+    </div>
+
+    <!-- Results -->
+    <section id="resultsSection" class="hidden">
+      <div class="results-header">
+        <div>
+          <div class="card-label">STEP 2 — YOUR LEADS</div>
+          <h2 id="resultCount">0 leads extracted</h2>
+        </div>
+        <button id="downloadBtn" class="btn-secondary">
+          ↓ Download CSV
+        </button>
+      </div>
+
+      <div class="table-wrap">
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Website</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Instagram</th>
+              <th>AI Opener</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Built for dental agency outreach · Powered by Flask + Claude AI</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
